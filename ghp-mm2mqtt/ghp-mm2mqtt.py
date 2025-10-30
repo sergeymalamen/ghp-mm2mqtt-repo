@@ -121,7 +121,7 @@ mqtt_client.on_message = on_message
 
 # mqtt_client.username_pw_set(MQTT_USERNAME, MQTT_PASSWORD)  # Set username and password
 # mqtt_client.connect(MQTT_BROKER, MQTT_PORT, 60)
-MQTT_BROKER = "192.168.1.220"
+MQTT_BROKER = "core-mosquitto"
 MQTT_PORT = 1883
 MQTT_USERNAME = "celiv"
 MQTT_PASSWORD = "230960"
