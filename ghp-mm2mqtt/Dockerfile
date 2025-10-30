@@ -1,13 +1,23 @@
+# Базовый образ от Home Assistant
 FROM ghcr.io/home-assistant/aarch64-base:latest
 
+# Установка необходимых пакетов
 RUN apk add --no-cache \
     python3 \
     py3-pip \
     py3-pyserial \
     py3-paho-mqtt
 
-COPY run.sh /run.sh
-COPY ghp-mm2mqtt.py /ghp-mm2mqtt.py
-COPY ghp_config.py /ghp_config.py
+# Рабочая директория внутри контейнера
+WORKDIR /usr/src/app
 
-CMD ["/run.sh"]
+# Копируем скрипты в рабочую директорию
+COPY run.sh .
+COPY ghp-mm2mqtt.py .
+COPY ghp_config.py .
+
+# Устанавливаем права на запуск
+RUN chmod +x run.sh
+
+# Указываем команду запуска
+CMD ["sh", "./run.sh"]
