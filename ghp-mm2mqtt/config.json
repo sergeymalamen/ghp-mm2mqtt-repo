@@ -11,5 +11,5 @@
   "arch": ["armv7", "aarch64"],
   "host_network": true,
   "devices": ["/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_BG009VVA-if00-port0"],
-  "privileged": true
+  "privileged": ["SYS_ADMIN"]
 }
