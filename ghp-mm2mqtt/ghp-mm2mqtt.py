@@ -139,7 +139,8 @@ readAddr=0
 
 # Open serial port
 ser = serial.Serial(
-    port=SERIAL_PORT,
+    port=
+,
     baudrate=9600,
     bytesize=serial.EIGHTBITS,
     parity=serial.PARITY_NONE,
