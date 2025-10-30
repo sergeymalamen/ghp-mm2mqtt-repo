@@ -102,9 +102,14 @@ def decodeModbus():
     decodeModbus()
 
 def on_connect(client, userdata, flags, rc):
-    client.subscribe(MQTT_TOPIC_PREFIX+"/set/#")
+    print(f"✅ MQTT connected with result code {rc}")
+    client.subscribe(MQTT_TOPIC_PREFIX + "/set/#")
+    print(f"📡 Subscribed to {MQTT_TOPIC_PREFIX}/set/#")
+
 
 def on_message(client, userdata, msg):
+    print(f"📨 Получено сообщение: {msg.topic} → {msg.payload.decode()}")
+
     global writemsg
     _logger.info(f"MQTT received msg.topic={msg.topic} msg.payload={msg.payload}")
     addr= msg.topic.split('/')
