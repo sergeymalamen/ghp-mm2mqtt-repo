@@ -1,4 +1,4 @@
-# Базовый образ от Home Assistant
+Commi# Базовый образ от Home Assistant
 FROM ghcr.io/home-assistant/aarch64-base:latest
 
 # Установка необходимых пакетов
